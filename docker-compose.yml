@@ -1,0 +1,15 @@
+version: '3'
+services:
+  oracle12c:
+    image: truevoly/oracle-12c
+    container_name: nara30-oracle
+    ports:
+      - 1521:1521
+    volumes:
+      - ./share:/share
+      - ./oracle:/u01/app/oracle
+#      - ./oradata:/u01/app/oracle/oradata
+#      - ./product:/u01/app/oracle/product
+    environment:
+      - ORACLE_ALLOW_REMOTE=true 
+    
